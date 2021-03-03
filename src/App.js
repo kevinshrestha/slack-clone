@@ -4,10 +4,12 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Chat from "./Chat.js";
-import Login from "./Login.js"
+import Login from "./Login.js";
+import { useStateValue } from "./StateProvider";
+
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue(null);
 
   return (
     //BEM naming conevetion
